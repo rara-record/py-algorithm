@@ -6,17 +6,17 @@ def toSum(nums, target):
     n = len(nums)
     for i in range(n):
         for j in range(i + 1, n):
-                if  nums[i] + nums[j] == target:
-                    return True
+            if nums[i] + nums[j] == target:
+                return True
     return False
 
-print(toSum(nums = [2,3,4,5,6], target=8))
 
+print(toSum(nums=[2, 3, 4, 5, 6], target=8))
 
 
 # O(n log n)
 def toSum(nums, target):
-    nums.sort() 
+    nums.sort()
     l, r = 0, len(nums) - 1
     while l < r:
         if nums[l] + nums[r] > target:
@@ -26,11 +26,6 @@ def toSum(nums, target):
         elif nums[l] + nums[r] == target:
             return True
     return False
-    
-print(toSum(nums = [4, 1, 9, 7, 5, 3, 16], target=14))
 
 
-
-    
-
-
+print(toSum(nums=[4, 1, 9, 7, 5, 3, 16], target=14))
