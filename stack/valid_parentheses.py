@@ -8,16 +8,26 @@
 # 1 <= s.length <= 104
 # s consists of parentheses only '()[]{}'
 
+
+parentheses_dict = {
+    '{': '}',
+    '[': ']',
+    '(': ')',
+}
+
+
 def isValid(s):
     stack = []
+
     for p in s:
-        if p == "(":
-            stack.append(")")
-        elif p == "[":
-            stack.append("]")
-        elif p == "{":
-            stack.append("}")
-        # 스택이 비어있지 않고, 스택의 top에서 제거한 인덱스가 p와 같지 않으면 false를 리턴한다.
-        elif not stack or stack.pop != p:
+        if p in parentheses_dict.keys():
+            stack.append(p)
+        elif not stack or parentheses_dict[stack.pop()] != p:
             return False
-        return not stack
+    if stack:
+        return False
+    return True
+
+
+lifo = isValid("[]}")
+print(lifo)
