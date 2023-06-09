@@ -2,28 +2,21 @@ from collections import deque
 
 
 def solution(priorities, location):
-    queue = deque(priorities)
     answer = 0
-    print(queue, 'queue')
+    queue = deque([(index, value) for index, value in enumerate(priorities)])  # [(0, 9), (1, 8, (2, 7))]
 
-    # 우선 순위가 높다면?
-    while queue:
-        # 대기 중인 큐에서 맨 앞에 요소를 뺀다
+    while len(queue) > 0:
         current = queue.popleft()
-        max_number = max(queue)
 
-        if max_number <= current:
-            answer += 1
-
-            if location == 0:
-                return answer
-            else:
-                location -= 1
-        else:
-            # 다시 큐에 넣는다
+        if any(current[1] < item[1] for item in queue):  # 현재 요소 보다 우선 순위가 더 높은 요소가 큐에 있는지 확인 한다.
             queue.append(current)
-            location = (location + len(queue) - 1) % len(queue)
+
+        else:
+            answer += 1
+            if current[0] == location:
+                return answer
+    return answer
 
 
-result = solution([9, 8, 7], 0)
-print(result, 'answer')
+result = solution([2, 1, 3, 2], 2)
+print(result)
