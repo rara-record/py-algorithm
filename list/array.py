@@ -2,7 +2,7 @@
 # 그렇지 않으면 fasle를 반환해라. 단 같은 원소를 두번 사용할 수는 없다.
 
 # O(n2)
-def toSum(nums, target):
+def to_sum(nums, target):
     n = len(nums)
     for i in range(n):
         for j in range(i + 1, n):
@@ -11,11 +11,11 @@ def toSum(nums, target):
     return False
 
 
-print(toSum(nums=[2, 3, 4, 5, 6], target=8))
+print(to_sum(nums=[2, 3, 4, 5, 6], target=8))
 
 
 # O(n log n)
-def toSum(nums, target):
+def to_sum(nums, target):
     nums.sort()
     l, r = 0, len(nums) - 1
     while l < r:
@@ -28,4 +28,4 @@ def toSum(nums, target):
     return False
 
 
-print(toSum(nums=[4, 1, 9, 7, 5, 3, 16], target=14))
+print(to_sum(nums=[4, 1, 9, 7, 5, 3, 16], target=14))

@@ -15,7 +15,7 @@ class LinkedList(object):
             self.head = new_node
         else:
             current = self.head
-            while (current.next):
+            while current.next:
                 current = current.next
             current.next = new_node
 

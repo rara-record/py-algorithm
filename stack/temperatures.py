@@ -1,5 +1,5 @@
 
-def dailyTemperatures(temperatures):
+def daily_temperatures(temperatures):
     ans = [0] * len(temperatures)
     stack = []
 
@@ -11,4 +11,4 @@ def dailyTemperatures(temperatures):
     return ans
 
 
-print(dailyTemperatures([73, 74, 75, 71, 69, 72, 76, 73]))
+print(daily_temperatures([73, 74, 75, 71, 69, 72, 76, 73]))

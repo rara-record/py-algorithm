@@ -1,5 +1,5 @@
 
-# LIFO 후입선출
+# LIFO 후입 선출
 # https://leetcode.com/problems/valid-parentheses/
 
 # () [] {} 를 포함하고 있는 문자열 s가 주어졌을 때, 괄호가 유효한지 아닌지 판별하셈
@@ -16,7 +16,7 @@ parentheses_dict = {
 }
 
 
-def isValid(s):
+def is_valid(s):
     stack = []
 
     for p in s:
@@ -29,5 +29,5 @@ def isValid(s):
     return True
 
 
-lifo = isValid("[]}")
+lifo = is_valid("[]}")
 print(lifo)

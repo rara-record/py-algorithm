@@ -2,7 +2,7 @@ function dailyTemperatures(temperatures: number[]): number[] {
   const stack: number[] = [];
   const ans: number[] = [];
 
-  // 역순으로 순회
+  // 역순 으로 순회
   for (let i = temperatures.length - 1; i >= 0; i--) {
     while (
       stack.length &&
