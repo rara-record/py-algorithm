@@ -12,7 +12,7 @@ def solution(priorities, location):
         #
         # if current[1] < max_value:  
         #     queue.append(current)
-        if any(current[1] < item[1] for item in queue): # 현재 요소 보다 우선 순위가 더 높은 요소가 큐에 있는지 확인 한다.
+        if any(current[1] < item[1] for item in queue):     # 현재 요소 보다 우선 순위가 더 높은 요소가 큐에 있는지 확인 한다.
             queue.append(current)
  
         else:
