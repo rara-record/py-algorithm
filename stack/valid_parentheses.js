@@ -1,3 +1,5 @@
+// O(n)
+
 function solution(s) {
   const stack = [];
   let answers = true;

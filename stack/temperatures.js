@@ -1,5 +1,6 @@
 // Daily temperatures
 // O(n)
+
 function dailyTemperatures(temperatures) {
   const stack = [];
   let ans = new Array(temperatures.length).fill(0);
