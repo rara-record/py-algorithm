@@ -1,18 +1,19 @@
+// Daily temperatures
+// O(n)
 function dailyTemperatures(temperatures) {
-  const stack= [];
-  const ans = [];
+  const stack = [];
+  let ans = new Array(temperatures.length).fill(0);
 
-  // 역순 으로 순회
-  for (let i = temperatures.length - 1; i >= 0; i--) {
-    while (
-      stack.length &&
-      temperatures[stack[stack.length -
-      1]] <= temperatures[i]
-    )
-      stack.pop();
-    ans.push(stack.length ? stack[stack.length - 1] - i : 0);
-    stack.push(i);
-  }
+  temperatures.forEach((temp, day) => {
+    while (stack.length && stack[stack.length - 1].temp < temp) {
+      const { day: prevDay } = stack.pop();
+      ans[prevDay] = day - prevDay;
+    }
+    stack.push({ day, temp });
+  });
 
-  return ans.reverse();
+  return ans;
 }
+
+const test = dailyTemperatures([73, 74, 75, 71, 69, 72, 76, 73]);
+console.log(test);
