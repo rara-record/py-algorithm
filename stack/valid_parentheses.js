@@ -1,6 +1,6 @@
 function solution(s) {
   const stack = [];
-  let answers = ture;
+  let answers = true;
   s.split("").forEach((element) => {
     if (element === "(") {
       stack.push(")");
